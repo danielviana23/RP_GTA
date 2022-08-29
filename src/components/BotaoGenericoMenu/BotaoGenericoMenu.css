@@ -1,0 +1,13 @@
+.botao_generico {
+    background-color: yellow;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    #section_menu_principal {
+        color: white;
+    }

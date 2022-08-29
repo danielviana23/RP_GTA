@@ -1,0 +1,33 @@
+#div_menu_principal {
+    background-color: orange;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+    #menu_dropdown {
+        position: absolute;
+        left: 0;
+        top: 100px;
+        background-color: red;
+        height: 400px;
+        width: 100%;
+    }
+
+    #section_menu_principal {
+        background-color: PINK;
+        width: 80%;
+    }
+    
+    #necessidades_do_player {
+        display: flex;
+        justify-content: space-around;
+        background-color: red;
+        width: 100%;
+    }
+
+    #input_buscar_jogador {
+        padding: 10px;
+        width: 250px;
+    }
