@@ -13,6 +13,11 @@ function ListaDeEmpregos() {
             id_emprego: 2,
             nome_emprego: "Uber",
             salario: "Calculado com base na corrida"
+        },
+        {
+            id_emprego: 3,
+            nome_emprego: "Traficante",
+            salario: "Calculado com base na corrida"
         }
     ]
 
@@ -21,23 +26,26 @@ function ListaDeEmpregos() {
 
         if(id_emprego_atual == null || id_emprego_atual == "") {
             window.localStorage.setItem("id_emprego_atual", id_emprego_novo);
+            alert("Emprego selecionado com sucesso! Agora você é um " + id_emprego_novo)
         } else {
             alert("Para entrar neste emprego você precisa sai do emprego atual.")
         }
     }
 
-    let lista_empregos = empregos.map(emprego => {
-        return ( <li className='item-emprego' id={emprego.id_emprego}>
-                    <span>Emprego: {emprego.nome_emprego}</span>
-                    <span>Salário: {emprego.salario}</span>
-                    <button className='botao_emprego' onClick={selecionarEmprego} id={emprego.id_emprego}>Selecionar este emprego</button>
-                </li>
-        )
-    })
+
+
+    const lista_empregos = empregos.map((emprego) => 
+        <li className='item-emprego' key={emprego.id_emprego} id={emprego.id_emprego}>
+            <span>Emprego: {emprego.nome_emprego}</span>
+            <span>Salário: {emprego.salario}</span>
+            <button className='botao_emprego' onClick={() => {selecionarEmprego(emprego.id_emprego)}} id={emprego.id_emprego}>Selecionar este emprego</button>
+        </li>
+    );
 
   return (
     <div>
         <HeaderComponentVoltar href="/chamada_de_emergencia" />
+        <h3>Lista de empregos</h3>
         <div id="div_lista_empregos">
             <ul id='lista_empregos'>
                 {lista_empregos}

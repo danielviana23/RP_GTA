@@ -1,0 +1,36 @@
+Pessoa: 
+	- Possui:
+		- nome
+		- identidade
+		- CNH ( se passar no DETRAN )
+		- Bens
+		- Informações bancárias para realizar transferência de dinheiro
+		
+EMPREGOS
+
+OBS: Quando não tiver jogador com um emprego, o emprego deve ser automatizado de forma que o jogo nao sinta o impacto caso 
+nao tenha jogadores com empregos disponíveis.
+
+
+Policial:
+	- Consultar identidade
+	- Consultar CNH
+	- Consultar placa de carro
+	
+
+Traficante:
+	- Possui chefe
+	- Possui cargo
+	- Pode assaltar carro, banco. Furtar ou roubar lojas.
+
+Vendedor:
+	- Pode vender produtos
+	- Pode comprar produtos
+	
+Caminhoneiro:
+	- Faz entregas de produtos do ponto inicial da coleta até o ponto de entrega.
+
+Bancário: 
+	- Dá empréstimos com base no crédito do cliente e controla percentual de juros.
+	- Aprova transferências de pix entre os jogadores.
+

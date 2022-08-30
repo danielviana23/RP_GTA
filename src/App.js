@@ -1,12 +1,12 @@
 import './App.css';
-import HeaderComponent from './components/header/HeaderComponent';
+import FooterComponent from './components/header/FooterComponent';
 import SectionPrincipal from './components/section/section-principal/SectionPrincipal';
 
 function App() {
   return (
     <div className="App">
-      <HeaderComponent/>
       <SectionPrincipal />
+      <FooterComponent/>
     </div>
   );
 }

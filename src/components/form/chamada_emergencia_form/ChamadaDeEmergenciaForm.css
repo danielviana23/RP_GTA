@@ -1,0 +1,19 @@
+#form_denuncia {
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#div_formulario {
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 300px;
+}
+
+#acao_jogador {
+    margin: 5px 0px;
+}

@@ -11,9 +11,9 @@ function SectionPrincipal() {
             <BotaoGenericoMenu path="/regras" id="opcao_regras" name="Regras"/>
             <BotaoGenericoMenu path="/empregos" id="opcao_emprego" name="Emprego"/>
             <BotaoGenericoMenu path="/denunciar_jogador" id="opcao_denunciar_jogador" name="Denunciar jogador"/>
-        </div>
+        </div>a
         <section id='section_menu_principal'>
-            <BotaoGenericoMenu path="/chamada_de_emergencia" id="chamada_de_emergencia" name="Chamada de emergência"/>
+            <BotaoGenericoMenu path="/chamada_de_emergencia" id="chamada_de_emergencia" name="Contatos"/>
             <BotaoGenericoMenu path="/meu_emprego" id="meu_emprego" name="Meu emprego"/>
             <BotaoGenericoMenu path="/meu_perfil" id="meu_perfil" name="Meu perfil"/>
         </section>
