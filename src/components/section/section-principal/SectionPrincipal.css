@@ -1,5 +1,5 @@
 #div_menu_principal {
-    background-color: orange;
+    background-color: #fff;
     width: 100%;
     display: flex;
     align-items: center;
@@ -10,24 +10,55 @@
         position: absolute;
         left: 0;
         top: 100px;
-        background-color: red;
+        background-color: #d4d4d4;
         height: 400px;
         width: 100%;
     }
 
     #section_menu_principal {
-        background-color: PINK;
+        background-color: #FFF;
         width: 80%;
     }
+
+        #iniciar_rp {
+            background-color: #05FF00;
+        }
+
+        #chamada_de_emergencia {
+            background-color: #FF0000;
+        }
+
+        #meu_emprego {
+            background-color: #0085FF;
+        }
+
+        #meu_perfil {
+            background-color: #0085FF;
+        }
     
     #necessidades_do_player {
         display: flex;
         justify-content: space-around;
-        background-color: red;
+        background-color: #FFF;
         width: 100%;
     }
 
     #input_buscar_jogador {
-        padding: 10px;
-        width: 250px;
+        height: 55px;
+        width: 100%;
+        padding: 0;
     }
+
+    #secao_jogadores_ativos {
+        background-color: #fff;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+        #div_jogadores_ativos {
+            width: 80%;
+            background-color: #FFF;
+        }

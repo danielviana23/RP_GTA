@@ -8,26 +8,27 @@ function SectionPrincipal() {
   return (
     <div id='div_menu_principal'>
         <div id='menu_dropdown' hidden>
-            <BotaoGenericoMenu id="a" name="Regras"/>
-            <BotaoGenericoMenu id="a" name="Emprego"/>
-            <BotaoGenericoMenu id="a" name="Denunciar jogador"/>
+            <BotaoGenericoMenu path="/regras" id="opcao_regras" name="Regras"/>
+            <BotaoGenericoMenu path="/empregos" id="opcao_emprego" name="Emprego"/>
+            <BotaoGenericoMenu path="/denunciar_jogador" id="opcao_denunciar_jogador" name="Denunciar jogador"/>
         </div>
         <section id='section_menu_principal'>
-            <BotaoGenericoMenu id="a" name="Iniciar RP"/>
-            <BotaoGenericoMenu id="b" name="Chamada de emergência"/>
-            <BotaoGenericoMenu id="c" name="Meu emprego"/>
-            <BotaoGenericoMenu id="c" name="Meu perfil"/>
+            <BotaoGenericoMenu path="/chamada_de_emergencia" id="chamada_de_emergencia" name="Chamada de emergência"/>
+            <BotaoGenericoMenu path="/meu_emprego" id="meu_emprego" name="Meu emprego"/>
+            <BotaoGenericoMenu path="/meu_perfil" id="meu_perfil" name="Meu perfil"/>
         </section>
         <div id='necessidades_do_player'>
             <CirculoNecessidade id="1" nome_necessidade="Fome" percentual="50%"/>
-            <CirculoNecessidade id="1" nome_necessidade="Fome" percentual="10%"/>
-            <CirculoNecessidade id="1" nome_necessidade="Fome" percentual="100%"/>
+            <CirculoNecessidade id="2" nome_necessidade="Sede" percentual="10%"/>
+            <CirculoNecessidade id="3" nome_necessidade="Sono" percentual="100%"/>
         </div>
-        <span>Lista de jogadores ativos</span>
-        <input id='input_buscar_jogador' placeholder='Buscar jogador por gamertag'/>
-        <div id='jogadores_ativos'>
-            <CardJogadorAtivo />
-        </div>
+        <h4>Lista de jogadores ativos</h4>
+        <section id='secao_jogadores_ativos'>
+            <div id='div_jogadores_ativos'>
+                <input id='input_buscar_jogador' placeholder='Buscar jogador por gamertag'/>
+                <CardJogadorAtivo />
+            </div>
+        </section>
     </div>
   );
 }

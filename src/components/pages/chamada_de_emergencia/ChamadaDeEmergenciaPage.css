@@ -1,0 +1,65 @@
+#section_emergencia {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    #emergencia_policia {
+        background-color: blue;
+        width: 100%;
+        height: 250px;
+        margin: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #emergencia_bombeiro {
+        background-color: blue;
+        width: 100%;
+        height: 250px;
+        margin: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #emergencia_ambulancia {
+        background-color: blue;
+        width: 100%;
+        height: 250px;
+        margin: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+   #emergencia_mecanico {
+        background-color: blue;
+        width: 100%;
+        height: 250px;
+        margin: 10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+   }
+
+   #div_emergencia {
+        width: 70%;
+        background-color: grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+   }
+
+   .link_fazer_chamada_emergencia {
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+   }

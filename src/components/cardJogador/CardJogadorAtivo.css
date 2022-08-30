@@ -1,4 +1,29 @@
 #card_jogador_ativo {
-    background-color: darkorchid;
+    background-color: #fff;
     margin: 5px 0px ;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
 }
+
+    #lista_de_jogadores_ativos {
+        padding: 0px;
+    }
+
+        .item-li {
+            background-color: #fff;
+            list-style: none;
+            margin: 15px 0px;
+            width: 100%;
+            padding: 0px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            border: 1px solid black;
+        }
+        
+            .span_jogador_ativo {
+                padding: 5px;
+            }
