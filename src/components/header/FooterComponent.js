@@ -1,7 +1,6 @@
 import React from 'react';
-import BotaoGenericoMenu from '../BotaoGenericoMenu/BotaoGenericoMenu';
+import BotaoGenericoMenu from '../Botoes/BotaoGenericoMenu/BotaoGenericoMenu';
 import './FooterComponent.css';
-
 // import { Link } from 'react-router-dom';
 
 function FooterComponent() {
@@ -19,8 +18,7 @@ function FooterComponent() {
     <footer id='footer'>
         <BotaoGenericoMenu path="/chamada_de_emergencia" id="chamada_de_emergencia" name="Contatos"/>
         <BotaoGenericoMenu path="/meu_perfil" id="perfil_jogador" name="Perfil"/>
-        <BotaoGenericoMenu path="/chamada_de_emergencia" id="chamada_de_emergencia" name="Contatos"/>
-
+        <BotaoGenericoMenu path="/apps" id="apps" name="Apps"/>
         <div id='menu' onClick={ativarMenuDropdown}>
             Menu
         </div>

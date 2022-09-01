@@ -11,6 +11,8 @@ import MeuPerfilPage from './components/pages/meu_perfil/MeuPerfilPage';
 import ChamadaDeEmergencia from './components/pages/chamada_de_emergencia/ChamadaDeEmergenciaPage';
 import ChamadaDeEmergenciaForm from './components/form/chamada_emergencia_form/ChamadaEmergenciaForm';
 import ListaDeEmpregos from './components/pages/empregos/listaEmpregos/ListaDeEmpregos';
+import AppsPage from './components/pages/app_page/AppsPage';
+import PolicialApp from './components/pages/Aplicativos/policial/PolicialApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const login = true;
@@ -28,6 +30,8 @@ if(login) {
           <Route path="/regras" exact={true} element={<RegrasPage />} />
           <Route path="/fazer_chamada_de_emergencia" exact={true} element={<ChamadaDeEmergenciaForm />} />
           <Route path="/empregos" exact={true} element={<ListaDeEmpregos />} />
+          <Route path="/apps" exact={true} element={<AppsPage />} />
+          <Route path="/aplicativo/policial" exact={true} element={<PolicialApp />} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>

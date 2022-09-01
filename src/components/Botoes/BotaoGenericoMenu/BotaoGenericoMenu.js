@@ -1,6 +1,6 @@
 import React from 'react';
 import './BotaoGenericoMenu.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function BotaoGenericoMenu(props) {
   return (

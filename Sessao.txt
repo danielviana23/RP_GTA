@@ -1,0 +1,3 @@
+O jogador, para entrar na sessao, deve ser inserido na tabela de sessao_ativa e para sair da sessão, deve ter seu id
+excluído da tabela sessao ativa;
+

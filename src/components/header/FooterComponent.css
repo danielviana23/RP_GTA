@@ -1,24 +1,14 @@
 #footer {
     background-color: #DB00FF;
     height: 100px;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 
     bottom: 0;
     position: fixed;
-    width: 100%;
 }
-
-    /* #div_menu {
-        width: 70px;
-        height: 70px;
-        background-color: #DB00FF;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        cursor: pointer;
-    } */
 
         #menu {
             width: 70px;
@@ -29,5 +19,4 @@
             align-items: center;
             justify-content: center;
 
-            margin-right: 50px;
         }

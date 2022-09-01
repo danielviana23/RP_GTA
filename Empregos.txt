@@ -1,3 +1,10 @@
+Funções aplicativo
+
+Ver jogadores ativos no RP.
+	request http: GET /jogadores/ativos
+	
+
+
 Pessoa: 
 	- Possui:
 		- nome

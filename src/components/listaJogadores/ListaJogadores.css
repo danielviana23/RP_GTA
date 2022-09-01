@@ -1,0 +1,18 @@
+#input_buscar_jogador {
+    height: 55px;
+    width: 100%;
+    padding: 0;
+}
+
+#secao_jogadores_ativos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    #div_jogadores_ativos {
+        width: 80%;
+        background-color: #FFF;
+    }

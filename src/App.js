@@ -4,7 +4,7 @@ import SectionPrincipal from './components/section/section-principal/SectionPrin
 
 function App() {
   return (
-    <div className="App">
+    <div className="App_principal">
       <SectionPrincipal />
       <FooterComponent/>
     </div>
