@@ -1,0 +1,27 @@
+.propriedades_jogador {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+    .propriedades {
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+        .nome_propriedade {
+            background-color: grey;
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .valor_propriedade {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }

@@ -30,27 +30,18 @@
         top: 100px;
         height: 400px;
         width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #menus_botoes {
+        display: flex;
+        justify-content: space-around;
     }
 
     #section_menu_principal {
         width: 80%;
     }
 
-        #chamada_de_emergencia {
-            background-color: #FF0000;
-        }
 
-        #meu_emprego {
-            background-color: #0085FF;
-        }
 
-        #meu_perfil {
-            background-color: #0085FF;
-        }
-    
-    #necessidades_do_player {
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-    }
 

@@ -1,0 +1,33 @@
+#status_player_identificacao {
+    padding: 10px;
+}
+
+    #texto_meu_perfil {
+        text-align: center;
+    }
+
+    #identificação {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: 5px;
+    }
+        #texto_identificacao {
+            text-align: center;
+            margin: 5px;
+        }
+    
+
+    #status {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+        #texto_status_jogador {
+            text-align: center;
+            margin: 5px;
+        }
+
+
+        #necessidades_do_player {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }

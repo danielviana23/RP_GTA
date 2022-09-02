@@ -7,7 +7,7 @@ function HeaderComponentVoltar(props) {
     <header id='header'>
         <div id="div_menu">
             <div id='menu'>
-                <Link to={props.href}>Voltar</Link>
+                <Link id="link_voltar" to={props.href}>Voltar</Link>
             </div>
         </div>
     </header>

@@ -1,44 +1,60 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import HeaderComponentVoltar from '../../../header/headerVoltar/HeaderComponentVoltar';
 import './ListaDeEmpregos.css';
 
 function ListaDeEmpregos() {
-    let empregos = [
-        {
-            id_emprego: 1,
-            nome_emprego: "Policial",
-            salario: 5000.00
-        },
-        {
-            id_emprego: 2,
-            nome_emprego: "Uber",
-            salario: "Calculado com base na corrida"
-        },
-        {
-            id_emprego: 3,
-            nome_emprego: "Traficante",
-            salario: "Calculado com base na corrida"
-        }
-    ]
 
-    function selecionarEmprego(id_emprego_novo) {
-        let id_emprego_atual = window.localStorage.getItem("id_emprego_atual");
+    const [empregos, setEmpregos] = useState([{id: 1}]);
 
-        if(id_emprego_atual == null || id_emprego_atual == "") {
-            window.localStorage.setItem("id_emprego_atual", id_emprego_novo);
-            alert("Emprego selecionado com sucesso! Agora você é um " + id_emprego_novo)
-        } else {
-            alert("Para entrar neste emprego você precisa sai do emprego atual.")
+    useEffect(() => {
+        setInterval(() => {
+            let apijogador = "http://localhost:8080/emprego/buscar_empregos";
+            var headerRequest = new Headers();
+            headerRequest.set("Access-Control-Request-Method", "GET");
+            headerRequest.set("Access-Control-Request-Headers", "Content-Type");
+            
+            fetch(apijogador, { headers: headerRequest, mode: 'cors' })
+            .then((resposta) => {
+                return resposta.json()
+            }).then(jsonBody => {
+                setEmpregos(jsonBody);
+            });
+
+        }, 10000);
+    }, [empregos]);
+
+    function associarJogadorAoEmprego(idEmprego) {
+        console.log("INICIAR ASSOCIAÇÃO JOGADOR EMPRESA " + idEmprego)
+        let apiEmpregos = "http://localhost:8080/emprego/associar_emprego_jogador";
+        var headerRequest = new Headers();
+        headerRequest.set("Access-Control-Request-Method", "POST");
+        headerRequest.set("Access-Control-Request-Headers", "Content-Type");
+
+        let empregoBody = {
+            id_jogador: 1,
+            id_emprego: 1
         }
+
+        fetch(apiEmpregos, {
+            method: 'POST',
+            headers: headerRequest, 
+            mode: 'cors',
+            body: {
+                "id_jogador": 5,
+                "id_emprego": 1
+            }
+        }).then((resposta) => {
+            return resposta.json()
+        }).then(jsonBody => {
+            // setEmpregos(jsonBody);
+        });
     }
 
-
-
     const lista_empregos = empregos.map((emprego) => 
-        <li className='item-emprego' key={emprego.id_emprego} id={emprego.id_emprego}>
-            <span>Emprego: {emprego.nome_emprego}</span>
+        <li className='item-emprego' key={emprego.id} id={emprego.id}>
+            <span>Emprego: {emprego.nomeEmprego}</span>
             <span>Salário: {emprego.salario}</span>
-            <button className='botao_emprego' onClick={() => {selecionarEmprego(emprego.id_emprego)}} id={emprego.id_emprego}>Selecionar este emprego</button>
+            <button className='botao_emprego' onClick={() => {associarJogadorAoEmprego(emprego.id)}} id={emprego.id_emprego}>Selecionar este emprego</button>
         </li>
     );
 

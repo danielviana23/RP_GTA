@@ -24,8 +24,9 @@
     }
 
 .botao_emprego {
-    background-color: blue;
+    background-color: green;
     border: 1px solid black;
     min-height: 50px;
+    cursor: pointer;
 }
 

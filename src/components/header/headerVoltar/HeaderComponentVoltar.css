@@ -1,0 +1,20 @@
+#header {
+    background-color: black;
+}
+
+    #div_menu {
+        display: flex;
+        justify-content: end;
+    }
+
+        #menu {
+            background-color: green;
+            border-bottom: 1px solid black;   
+        }
+
+        #link_voltar {
+            text-decoration: none;
+            padding: 2px 20px 40px 0px;
+            color: black;
+        }
+
