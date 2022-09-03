@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderComponentVoltar from "../../header/headerVoltar/HeaderComponentVoltar";
+import HeaderComponentVoltar from "../../footer/headerVoltar/HeaderComponentVoltar";
 import './ErroApp.css';
 
 function ErroApp() {

@@ -1,6 +1,5 @@
 import React from 'react';
 import BotaoApp from '../../Botoes/BotaoApps/BotaoApp';
-import HeaderComponentVoltar from '../../header/headerVoltar/HeaderComponentVoltar';
 import './AppsPage.css';
 
 import { Link } from 'react-router-dom';
@@ -10,6 +9,7 @@ import BombeiroIcon from '../../../assets/emprego_icon/icone_bombeiro.png';
 import PoliciaIcon from '../../../assets/emprego_icon/icone_policia.jpg';
 import UberIcon from '../../../assets/emprego_icon/uber.png';
 import AmbulanciaIcon from '../../../assets/emprego_icon/icone_ambulancia.png';
+import HeaderComponentVoltar from '../../footer/headerVoltar/HeaderComponentVoltar';
 
 function AppsPage() {
 

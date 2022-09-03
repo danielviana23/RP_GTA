@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import HeaderComponentVoltar from '../../../header/headerVoltar/HeaderComponentVoltar';
+import HeaderComponentVoltar from '../../../footer/headerVoltar/HeaderComponentVoltar';
 import './ListaDeEmpregos.css';
 
 function ListaDeEmpregos() {

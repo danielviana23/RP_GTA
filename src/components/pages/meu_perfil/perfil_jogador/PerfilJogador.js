@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import CirculoNecessidade from "../../../circulos/CirculoNecessidade";
-import HeaderComponentVoltar from "../../../header/headerVoltar/HeaderComponentVoltar";
 import ImagemPerfilComponent from "../../../imagem/img_perfil/ImagemPerfilComponent";
 import PropriedadesJogadorComponent from "../../../propriedades_jogador/PropriedadesJogadorComponent";
 

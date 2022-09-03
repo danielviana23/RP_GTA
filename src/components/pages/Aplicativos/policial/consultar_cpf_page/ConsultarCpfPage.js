@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HeaderComponentVoltar from "../../../../header/headerVoltar/HeaderComponentVoltar";
+import HeaderComponentVoltar from "../../../../footer/headerVoltar/HeaderComponentVoltar";
 import ErroApp from "../../../erroApp/ErroApp";
 import PerfilJogador from "../../../meu_perfil/perfil_jogador/PerfilJogador";
 

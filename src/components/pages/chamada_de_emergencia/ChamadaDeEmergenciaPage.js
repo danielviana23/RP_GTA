@@ -1,7 +1,7 @@
 import React from "react";
-import HeaderComponentVoltar from "../../header/headerVoltar/HeaderComponentVoltar";
 import './ChamadaDeEmergenciaPage.css';
 import { Link } from 'react-router-dom';
+import HeaderComponentVoltar from "../../footer/headerVoltar/HeaderComponentVoltar";
 
 function ChamadaDeEmergenciaPage() {
   return (

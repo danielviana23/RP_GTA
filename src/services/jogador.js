@@ -1,3 +1,3 @@
-function buscarJogador() {
-    alert("buscando")
+export default function BuscarJogador() {
+    alert("foi")
 }

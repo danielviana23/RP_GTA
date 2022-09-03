@@ -1,6 +1,6 @@
 import React from "react";
-import BotaoFuncaoEmprego from "../../../Botoes/BotaoFuncaoEmprego/BotaoFuncaoEmprego";
-import HeaderComponentVoltar from "../../../header/headerVoltar/HeaderComponentVoltar";
+import HeaderComponentVoltar from "../../../footer/headerVoltar/HeaderComponentVoltar";
+import BotaoFuncaoEmprego from '../../../Botoes/BotaoFuncaoEmprego/BotaoFuncaoEmprego'
 import ErroApp from "../../erroApp/ErroApp";
 
 function PolicialApp() {
@@ -11,7 +11,7 @@ function PolicialApp() {
     return (
       <div id="aplicativo_policial">
         <HeaderComponentVoltar href="/"/>
-        <BotaoFuncaoEmprego href_funcao="/aplicativo/policial/consultar_cpf"    name="Consultar CPF" />
+        <BotaoFuncaoEmprego href_funcao="/aplicativo/policial/consultar_cpf" name="Consultar CPF" />
         {/* <BotaoFuncaoEmprego href_funcao="/aplicativo/policial/consultar_placa"  name="Consultar placa" />
         <BotaoFuncaoEmprego href_funcao="/aplicativo/policial/revistar_jogador" name="Revistar jogador" />
         <BotaoFuncaoEmprego href_funcao="/aplicativo/policial/revistar_veiculo" name="Revistar veiculo" />

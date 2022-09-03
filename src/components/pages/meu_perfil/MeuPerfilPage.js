@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import HeaderComponentVoltar from "../../header/headerVoltar/HeaderComponentVoltar";
 import ImagemPerfilComponent from "../../imagem/img_perfil/ImagemPerfilComponent";
 import PropriedadesJogadorComponent from "../../propriedades_jogador/PropriedadesJogadorComponent";
 import CirculoNecessidade from '../../circulos/CirculoNecessidade';
 
 import './MeuPerfilPage.css';
+import HeaderComponentVoltar from "../../footer/headerVoltar/HeaderComponentVoltar";
 
 function MeuPerfilPage() {
 
@@ -48,11 +48,12 @@ function MeuPerfilPage() {
     }
   }
 
-  let apijogador = "http://localhost:8080/jogador/buscar_jogador/790439513";
+  let apijogador = "http://localhost:8080/jogador/buscar_jogador/1298927204";
   var headerRequest = new Headers();
-  headerRequest.set("Access-Control-Request-Method", "GET");
-  headerRequest.set("Access-Control-Request-Headers", "Content-Type");
-
+      headerRequest.set("Access-Control-Request-Method", "POST");
+      headerRequest.set("Access-Control-Request-Headers", "Content-Type");
+  // headerRequest.set("Access-Control-Allow-Origin", "*");
+  
   function buscarInformacaoPerfilJogador() {
     fetch(apijogador, {headers: headerRequest, mode: 'cors'})
     .then((resposta) => {

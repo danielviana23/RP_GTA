@@ -1,11 +1,11 @@
 #login {
-    background-color: yellow;
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #banner_rp {
-    background-color: black;
     width: 100%;
     height: 100px;
 }
@@ -15,6 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 300px;
 }
 
 #form_login {
@@ -22,3 +23,41 @@
     flex-direction: column;
 }
 
+
+#figure_banner_login {
+    height: 200px;
+}
+
+    #imagem_banner_login {
+        height: 200px;
+        width: 100%;
+    }
+
+    #input_login_usuario {
+        padding: 20px;
+        margin: 4px;
+
+    }
+
+    #input_login_senha {
+        padding: 20px;
+        margin: 4px;
+    }
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+}
+
+#button_login1 {
+    padding: 15px;
+    margin: 5px;
+}
+
+#button_login2 {
+    padding: 15px;
+    margin: 5px;
+}
