@@ -4,56 +4,54 @@ import './ListaDeEmpregos.css';
 
 function ListaDeEmpregos() {
 
-    const [empregos, setEmpregos] = useState([{id: 1}]);
+    const [empregos, setEmpregos] = useState([]);
+
+    let apijogador = "http://localhost:8080/emprego/buscar_empregos";
+    var headerRequest = new Headers();
+    headerRequest.set("Access-Control-Request-Method", "GET");
+    headerRequest.set("Access-Control-Request-Headers", "Content-Type");
+            
+    
 
     useEffect(() => {
-        setInterval(() => {
-            let apijogador = "http://localhost:8080/emprego/buscar_empregos";
-            var headerRequest = new Headers();
-            headerRequest.set("Access-Control-Request-Method", "GET");
-            headerRequest.set("Access-Control-Request-Headers", "Content-Type");
-            
-            fetch(apijogador, { headers: headerRequest, mode: 'cors' })
-            .then((resposta) => {
-                return resposta.json()
-            }).then(jsonBody => {
-                setEmpregos(jsonBody);
-            });
+        fetch(apijogador, { headers: headerRequest, mode: 'cors' })
+        .then((resposta) => {
+            return resposta.json()
+        }).then(jsonBody => {
+            setEmpregos(jsonBody);
+        }).catch((erro) => {
+            console.log("ocorreu um erro ao buscar empregos")
+        });
 
-        }, 10000);
-    }, [empregos]);
+    }, [null])
 
     function associarJogadorAoEmprego(idEmprego) {
-        console.log("INICIAR ASSOCIAÇÃO JOGADOR EMPRESA " + idEmprego)
+        
+        console.log("INICIAR ASSOCIAÇÃO JOGADOR EMPREGO " + idEmprego)
         let apiEmpregos = "http://localhost:8080/emprego/associar_emprego_jogador";
         var headerRequest = new Headers();
         headerRequest.set("Access-Control-Request-Method", "POST");
         headerRequest.set("Access-Control-Request-Headers", "Content-Type");
 
         let empregoBody = {
-            id_jogador: 1,
-            id_emprego: 1
+            id_jogador: window.localStorage.getItem("token"),
+            id_emprego: idEmprego
         }
 
         fetch(apiEmpregos, {
             method: 'POST',
             headers: headerRequest, 
             mode: 'cors',
-            body: {
-                "id_jogador": 5,
-                "id_emprego": 1
-            }
+            body: JSON.stringify(empregoBody)
         }).then((resposta) => {
             return resposta.json()
         }).then(jsonBody => {
-            setEmpregos(jsonBody);
+            alert("Você está empregado!")
         }).catch((erro) => {
             console.log(erro);
-            alert("Ocorreu um erro ao buscar empregos!");
+            alert("Ocorreu um erro tentar empregá-lo! Tente novamente!");
         });
     }
-
-    
 
     const lista_empregos = empregos.map((emprego) => 
         <li className='item-emprego' key={emprego.id} id={emprego.id}>
@@ -62,22 +60,18 @@ function ListaDeEmpregos() {
             <button className='botao_emprego' onClick={() => {associarJogadorAoEmprego(emprego.id)}} id={emprego.id_emprego}>Selecionar este emprego</button>
         </li>
     );
-
-    console.log(lista_empregos)
-
-
-
-  return (
-    <div>
-        <HeaderComponentVoltar href="/chamada_de_emergencia" />
-        <h3>Lista de empregos</h3>
-        <div id="div_lista_empregos">
-            <ul id='lista_empregos'>
-                {lista_empregos}
-            </ul>
+   
+    return (
+        <div>
+            <HeaderComponentVoltar href="/chamada_de_emergencia" />
+            <h3>Lista de empregos</h3>
+            <div id="div_lista_empregos">
+                <ul id='lista_empregos'>
+                    {lista_empregos}
+                </ul>
+            </div>
         </div>
-    </div>
-  );
+    );
 }
 
 export default ListaDeEmpregos;
