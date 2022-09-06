@@ -1,0 +1,47 @@
+#div_inputs_emergencia {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    #input_chamada_emergencia {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 150px;
+    }
+
+        #numero_emergencia {
+            width: 50%;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        #descricao_emergencia {
+            width: 50%;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        #enviar_chamada_emergencia {
+            width: 50%;
+            padding: 15px;
+            margin: 10px auto;
+        }
+
+#contatos_salvos {
+   
+}
+
+.contatos_emergencia {
+}
+
+.detalhe_contato {
+}
+
+.nome_contato {
+    height: 50px;
+    width: 50%;
+
+}

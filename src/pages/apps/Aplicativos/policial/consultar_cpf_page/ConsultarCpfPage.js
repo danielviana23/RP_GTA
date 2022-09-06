@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import HeaderComponentVoltar from "../../../../footer/headerVoltar/HeaderComponentVoltar";
-import ErroApp from "../../../erroApp/ErroApp";
-import PerfilJogador from "../../../meu_perfil/perfil_jogador/PerfilJogador";
+import PerfilJogador from '../../../../perfil/perfil_jogador/PerfilJogador';
+import HeaderComponentVoltar from "../../../../../components/footer/headerVoltar/HeaderComponentVoltar";
+import ErroApp from "../../../../erroApp/ErroApp";
 
 function ConsultarCpfPage() {
 

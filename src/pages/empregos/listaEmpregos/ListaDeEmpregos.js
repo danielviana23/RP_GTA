@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import HeaderComponentVoltar from '../../../footer/headerVoltar/HeaderComponentVoltar';
+import HeaderComponentVoltar from '../../../components/footer/headerVoltar/HeaderComponentVoltar';
 import './ListaDeEmpregos.css';
 
 function ListaDeEmpregos() {
@@ -46,9 +46,14 @@ function ListaDeEmpregos() {
         }).then((resposta) => {
             return resposta.json()
         }).then(jsonBody => {
-            // setEmpregos(jsonBody);
+            setEmpregos(jsonBody);
+        }).catch((erro) => {
+            console.log(erro);
+            alert("Ocorreu um erro ao buscar empregos!");
         });
     }
+
+    
 
     const lista_empregos = empregos.map((emprego) => 
         <li className='item-emprego' key={emprego.id} id={emprego.id}>
@@ -57,6 +62,10 @@ function ListaDeEmpregos() {
             <button className='botao_emprego' onClick={() => {associarJogadorAoEmprego(emprego.id)}} id={emprego.id_emprego}>Selecionar este emprego</button>
         </li>
     );
+
+    console.log(lista_empregos)
+
+
 
   return (
     <div>

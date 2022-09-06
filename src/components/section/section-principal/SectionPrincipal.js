@@ -6,16 +6,15 @@ import './SectionPrincipal.css';
 function SectionPrincipal() {
 
     function deslogar() {
-        window.localStorage.setItem("login", false);
+        window.localStorage.setItem("token", null);
         window.location.href = "/";
         // deslogar jogador da sessão
-
     }
 
     return (
         <div id='div_menu_principal'>
             <div id='aba_notificacao'>
-                <div><img id='simbolo_wifi' src={Wifi}/></div>
+                <div><img id='simbolo_wifi' src={Wifi} alt="simbolo wifi"/></div>
                 <div id='simbolos'>
                     <div id='simbolo_bateria'>
                         <div>simbolo bateria</div>

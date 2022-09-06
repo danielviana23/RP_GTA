@@ -1,25 +1,35 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Banner from './assets/banner_login.png'
 import './Login.css';
 
 import App from './App';
-import RegrasPage from './components/pages/regras/RegrasPage';
-import MeuPerfilPage from './components/pages/meu_perfil/MeuPerfilPage';
-import ChamadaDeEmergenciaPage from './components/pages/chamada_de_emergencia/ChamadaDeEmergenciaPage';
-import ListaDeEmpregos from './components/pages/empregos/listaEmpregos/ListaDeEmpregos';
-import AppsPage from './components/pages/app_page/AppsPage';
-import PolicialApp from './components/pages/Aplicativos/policial/PolicialApp';
-import ConsultarCpfPage from './components/pages/Aplicativos/policial/consultar_cpf_page/ConsultarCpfPage';
+import RegrasPage from './pages/regras/RegrasPage';
+import MeuPerfilPage from './pages/perfil/MeuPerfilPage';
+import ChamadaDeEmergenciaPage from './pages/chamada/ChamadaDeEmergenciaPage';
+import ListaDeEmpregos from './pages/empregos/listaEmpregos/ListaDeEmpregos';
+import AppsPage from './pages/apps/AppsPage';
+import PolicialApp from './pages/apps/Aplicativos/policial/PolicialApp'
+import ConsultarCpfPage from './pages/apps/Aplicativos/policial/consultar_cpf_page/ConsultarCpfPage';
 import RegistrarComponent from './RegistrarComponent';
 
 
-function AppIndex(props) {
+function AppIndex() {
+    
+    const [showComponent, setShowComponent] = useState();
+    const [token, setToken] = useState();
+    const [isLogged, setIsLogged] = useState();
 
-    const isLoggedIn = props.isLogado;
-    let token = window.localStorage.getItem("login")
-    const [isLogged, setIsLogged] = useState(token != null || token != "");
-    const [showComponent, setShowComponent] = useState(false);
+    
+    useEffect(() => {
+        setToken(window.localStorage.getItem("token"));
+        if(token == null || token == undefined || token == "undefined" || token == "null") {
+            setIsLogged(false)
+        } else {
+            setIsLogged(true)
+        }
+    });
+
 
     function habilitarRegistro() {
         if(showComponent) {
@@ -53,15 +63,15 @@ function AppIndex(props) {
         .then((resposta) => {
           return resposta.json();
         }).then(jsonBody => {
-            console.log(jsonBody)
-            window.localStorage.setItem("login", true)
-            window.location.href = "/"
+            window.localStorage.setItem("token", jsonBody.token);
+            window.location.href = "/";
         }).catch((error) => {
+            alert("Ocorreu um erro ao fazer o login")
             console.log(error)
         });
     }
 
-    if(isLoggedIn) {
+    if(isLogged) {
         return (
             <React.StrictMode>
                 <BrowserRouter>
@@ -71,8 +81,8 @@ function AppIndex(props) {
                         <Route path='/meu_perfil' exact={true} element={<MeuPerfilPage />} />
                         <Route path='/chamada_de_emergencia' exact={true} element={<ChamadaDeEmergenciaPage />} /> 
                         <Route path="/regras" exact={true} element={<RegrasPage />} />
-                        {/* <Route path="/fazer_chamada_de_emergencia" exact={true} element={<ChamadaDeEmergenciaForm />} /> */}
-                         <Route path="/empregos" exact={true} element={<ListaDeEmpregos />} />
+                        <Route path="/fazer_chamada_de_emergencia" exact={true} element={<ChamadaDeEmergenciaPage />} />
+                        <Route path="/empregos" exact={true} element={<ListaDeEmpregos />} />
                         <Route path="/apps" exact={true} element={<AppsPage />} /> 
                         
                         
@@ -88,7 +98,6 @@ function AppIndex(props) {
             </React.StrictMode>
         )
     } else {
-        // <Login />
         return (
             <div id='login'>
                 <div id='figure_banner_logina'>

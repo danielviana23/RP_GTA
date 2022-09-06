@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import ImagemPerfilComponent from "../../imagem/img_perfil/ImagemPerfilComponent";
-import PropriedadesJogadorComponent from "../../propriedades_jogador/PropriedadesJogadorComponent";
-import CirculoNecessidade from '../../circulos/CirculoNecessidade';
+import CirculoNecessidade from "../../../components/circulos/CirculoNecessidade";
+import ImagemPerfilComponent from "../../../components/imagem/img_perfil/ImagemPerfilComponent";
+import PropriedadesJogadorComponent from "../../../components/propriedades_jogador/PropriedadesJogadorComponent";
 
-import './MeuPerfilPage.css';
-import HeaderComponentVoltar from "../../footer/headerVoltar/HeaderComponentVoltar";
 
-function MeuPerfilPage() {
+import './PerfilJogador.css';
+
+function PerfilJogador(props) {
 
   const [cpf, setCpf] = useState(null);
   const [dinheiro, setDinheiro] = useState(null);
@@ -27,6 +27,7 @@ function MeuPerfilPage() {
       mudarCorNecessidades(sono, '3')
       mudarCorNecessidades(vida, 'vida')
       buscarInformacaoPerfilJogador()
+      console.log("ok");
       if(count == 1 ) {
         setCount(count - 1)
       } else {
@@ -48,21 +49,20 @@ function MeuPerfilPage() {
     }
   }
 
-  let apijogador = "http://localhost:8080/jogador/buscar_jogador/1298927204";
+  let apijogador = "http://localhost:8080/jogador/buscar_jogador/" + props.id_jogador_consulta;
   var headerRequest = new Headers();
-      headerRequest.set("Access-Control-Request-Method", "POST");
-      headerRequest.set("Access-Control-Request-Headers", "Content-Type");
-  // headerRequest.set("Access-Control-Allow-Origin", "*");
-  
+  headerRequest.set("Access-Control-Request-Method", "GET");
+  headerRequest.set("Access-Control-Request-Headers", "Content-Type");
+
   function buscarInformacaoPerfilJogador() {
     fetch(apijogador, {headers: headerRequest, mode: 'cors'})
     .then((resposta) => {
-      return resposta.json()
+      return resposta.json();
     }).then(jsonBody => {
 
+      setCpf(jsonBody.idJogador)
       setDinheiro(jsonBody.dinheiro);
       setVida(jsonBody.vida);
-      setCpf(jsonBody.idJogador)
   
       if(jsonBody.emprego != null) {
         setEmprego(jsonBody.emprego.nomeEmprego)
@@ -76,13 +76,11 @@ function MeuPerfilPage() {
       setFome(jsonBody.fome)
       setSono(jsonBody.sono)
     });
-
   }
 
   return (
     <div>
-        <HeaderComponentVoltar href="/"/>
-        <h3 id="texto_meu_perfil">Meu perfil</h3>
+        <h3 id="texto_meu_perfil">Informações do cidadão</h3>
         <div id='necessidades_do_player'>
             <CirculoNecessidade id="1" nome_necessidade="Fome" percentual={fome + "%"}/>
             <CirculoNecessidade id="2" nome_necessidade="Sede" percentual={sede + "%"}/>
@@ -107,4 +105,4 @@ function MeuPerfilPage() {
   );
 }
 
-export default MeuPerfilPage;
+export default PerfilJogador;

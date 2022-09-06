@@ -1,15 +1,15 @@
 import React from 'react';
-import BotaoApp from '../../Botoes/BotaoApps/BotaoApp';
+import BotaoApp from '../../components/Botoes/BotaoApps/BotaoApp';
 import './AppsPage.css';
 
 import { Link } from 'react-router-dom';
 
 // icone aplicativos
-import BombeiroIcon from '../../../assets/emprego_icon/icone_bombeiro.png';
-import PoliciaIcon from '../../../assets/emprego_icon/icone_policia.jpg';
-import UberIcon from '../../../assets/emprego_icon/uber.png';
-import AmbulanciaIcon from '../../../assets/emprego_icon/icone_ambulancia.png';
-import HeaderComponentVoltar from '../../footer/headerVoltar/HeaderComponentVoltar';
+import BombeiroIcon from '../../assets/emprego_icon/icone_bombeiro.png';
+import PoliciaIcon from '../../assets/emprego_icon/icone_policia.jpg';
+import UberIcon from '../../assets/emprego_icon/uber.png';
+import AmbulanciaIcon from '../../assets/emprego_icon/icone_ambulancia.png';
+import HeaderComponentVoltar from '../../components/footer/headerVoltar/HeaderComponentVoltar';
 
 function AppsPage() {
 
