@@ -6,14 +6,15 @@ import './Login.css';
 import TelaPrincipal from './App';
 import RegrasPage from './pages/regras/RegrasPage';
 import MeuPerfilPage from './pages/perfil/MeuPerfilPage';
-import ChamadaDeEmergenciaPage from './pages/chamada/ChamadaDeEmergenciaPage';
 import ListaDeEmpregos from './pages/empregos/listaEmpregos/ListaDeEmpregos';
 import AppsPage from './pages/apps/AppsPage';
 import PolicialApp from './pages/apps/Aplicativos/policial/PolicialApp'
 import ConsultarCpfPage from './pages/apps/Aplicativos/policial/consultar_cpf_page/ConsultarCpfPage';
 import RegistrarComponent from './RegistrarComponent';
 import MensagemPage from './pages/mensagem/MensagemPage';
+
 import MochilaPage from './pages/mochila/MochilaPage';
+
 import EnviarMensagemPage from './pages/mensagem/EnviarMensagemPage';
 
 function AppIndex() {
@@ -86,17 +87,19 @@ function AppIndex() {
                         <Route index exact={true} path="/" element={<TelaPrincipal />} />
 
                         <Route path='/regras' exact={true} element={<RegrasPage />} />
-                        <Route path='/meu_perfil' exact={true} element={<MeuPerfilPage />} />
-                        <Route path='/mensagem' exact={true} element={<MensagemPage />} /> 
-                        <Route path='/mochila' exact={true} element={<MochilaPage />} /> 
-                        <Route path="/regras" exact={true} element={<RegrasPage />} />
-                        <Route path="/fazer_chamada_de_emergencia" exact={true} element={<ChamadaDeEmergenciaPage />} />
-                        <Route path="/empregos" exact={true} element={<ListaDeEmpregos />} />
-                        <Route path="/apps" exact={true} element={<AppsPage />} /> 
-                        <Route path="/mensagem/enviar_mensagem" exact={true} element={<EnviarMensagemPage />} /> 
                         
+                        <Route path='/jogador/meu_perfil' exact={true} element={<MeuPerfilPage />} />
+                        <Route path='/jogador/mochila' exact={true} element={<MochilaPage />} /> 
+
+                        <Route path='/mensagem_recebida' exact={true} element={<MensagemPage />} /> 
+                        <Route path="/mensagem/enviar_mensagem" exact={true} element={<EnviarMensagemPage />} /> 
+
+                        <Route path="/apps" exact={true} element={<AppsPage />} /> 
+                        
+                        <Route path="/empregos/lista_empregos" exact={true} element={<ListaDeEmpregos />} />
+
                         <Route path="/aplicativo/policial" exact={true} element={<PolicialApp />} />
-                        <Route path="/aplicativo/policial/consultar_cpf"    exact={true} element={<ConsultarCpfPage />} />  
+                        <Route path="/aplicativo/policial/consultar_cpf" exact={true} element={<ConsultarCpfPage />} />  
                         {/* <Route path="/aplicativo/policial/consultar_placa"  exact={true} element={<ConsultarPlacaPage/>} />
                         <Route path="/aplicativo/policial/revistar_jogador" exact={true} element={<RevistarJogadorPage />} />
                         <Route path="/aplicativo/policial/revistar_veiculo" exact={true} element={<RevistarVeiculoPage />} />

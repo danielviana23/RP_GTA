@@ -1,22 +1,75 @@
-#lista_itens_mochila {
-    list-style: none;
-    padding: 0px;
-    margin: 0px auto;
-    width: 90%;
+.mochila_page {
+
 }
 
+    span#capacidade_mochila {
 
-    .item_mochila{
-        background-color: black;
-        color: white;
-        margin-top: 10px;
+    }
+
+    ul.lista_itens_mochila {
+        list-style: none;
         padding: 10px;
-        display: flex;
-
+        margin: 0px auto 50px auto;
+        width: 90%;
+        max-height: 250px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background-color: #000;
     }
 
-    .link_page_mochila {
-        text-decoration: none;
-        color: white;
-        min-width: 100%;
-    }
+
+        .item_mochila {
+            background-color: #2b2b2b;
+            color: white;
+            margin-top: 10px;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 90%;
+            min-height: 100px;
+            margin: 0 auto 10px;
+            
+        }
+
+            div.nome_produto_mochila {
+                padding: 10px;
+                text-align: center;
+            }
+
+            div.botoes_usar_transferir {
+                display: flex;
+                background-color: yellow;
+                width: 100%;
+            }
+
+                .botao_usar_mochilapage {
+                    background-color: green;
+                    padding: 10px;
+                    flex-grow: 5;
+                    text-align: center;
+                }
+
+                .botao_transferir_mochilapage {
+                    background-color: red;
+                    padding: 10px;
+                    flex-grow: 5;
+                    text-align: center;
+                }
+
+            .link_page_mochila {
+                text-decoration: none;
+                color: white;
+                min-width: 90%;
+                max-width: 90%;
+                margin: 0 auto;
+                padding: 10px;
+                text-align: center;
+                background-color: #2B2B2B;
+            }
+
+            .lista_produtos_jogador {
+                min-height: 100px;
+                background-color: rgb(37, 32, 32);
+                
+            }

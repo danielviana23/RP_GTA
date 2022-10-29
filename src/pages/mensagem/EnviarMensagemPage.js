@@ -26,7 +26,7 @@ function EnviarMensagemPage() {
             <button id='botao_enviar_mensagem' onClick={enviarMensagemPage}>
                 Enviar mensagem
             </button>
-            <HeaderComponentVoltar href="/mensagem"/>
+            <HeaderComponentVoltar href="/mensagem_recebida"/>
         </div>
       </div>
     );

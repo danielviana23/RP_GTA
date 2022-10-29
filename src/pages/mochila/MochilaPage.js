@@ -1,20 +1,115 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import HeaderComponentVoltar from '../../components/footer/headerVoltar/HeaderComponentVoltar';
 import './MochilaPage.css';
+import ServiceJogador from '../../services/JogadorService';
 
 function MochilaPage() {
+
+    const [itensMochilaJogador, setItensMochilaJogador] = useState([]);
+
+    const itens_mochila_jogador = ServiceJogador.buscar_itens_mochila_jogador(); 
+    
+    function mostrarDropdown(id_item) {
+      let li_item = document.getElementById("lista" + id_item);
+      // if(li_item.style.display == "none") {
+      //   li_item.style.display = "block"
+      // } else {
+      //   li_item.style.display = "none"
+      // }
+    }
+
+    function mostrarComidas() {
+      return itens_mochila_jogador.map(item => {
+        return (
+          <li className='item_mochila' id='lista_categoria_comida'>
+            <div className='nome_produto_mochila' >Pizza ( 10 unidades )</div>
+            <div className='botoes_usar_transferir'>
+              <div className='botao_usar_mochilapage'>Usar</div>
+              <div className='botao_transferir_mochilapage'>Transferir</div>
+            </div>
+          </li>
+        )
+      });
+    }
+
+    function mostrarBebidas() {
+      let itens_bebidas_filtrados = itens_mochila_jogador.map(item => {
+        return (
+          <li className='item_mochila' id='lista_categoria_comida'>
+            <div className='nome_produto_mochila' >Pizza ( 10 unidades )</div>
+            <div className='botoes_usar_transferir'>
+              <div className='botao_usar_mochilapage'>Usar</div>
+              <div className='botao_transferir_mochilapage'>Transferir</div>
+            </div>
+          </li>
+        )
+      });
+      return itens_bebidas_filtrados;
+    }
+
+    function mostrarArmas() {
+      return itens_mochila_jogador.map(item => {
+        return (
+          <li className='item_mochila' id='lista_categoria_comida'>
+            <div className='nome_produto_mochila' >Pizza ( 10 unidades )</div>
+            <div className='botoes_usar_transferir'>
+              <div className='botao_usar_mochilapage'>Usar</div>
+              <div className='botao_transferir_mochilapage'>Transferir</div>
+            </div>
+          </li>
+        )
+      });
+    }
+
+    function mostrarOutrosProdutos() {
+      return itens_mochila_jogador.map(item => {
+        return (
+          <li className='item_mochila' id='lista_categoria_comida'>
+            <div className='nome_produto_mochila' >Pizza ( 10 unidades )</div>
+            <div className='botoes_usar_transferir'>
+              <div className='botao_usar_mochilapage'>Usar</div>
+              <div className='botao_transferir_mochilapage'>Transferir</div>
+            </div>
+          </li>
+        )
+      });
+    }
+
     return (
-      <div className="mensagem_page">
+      <div className="mochila_page">
         <div>
           <h1>Sua mochila</h1>
         </div>
-        <span id='capacidade_mochila'>Capacidade de carga: 10 unidades</span>
-        <ul id='lista_itens_mochila'>
-          <li className='item_mochila' id='item_comida_mochila'><Link className='link_page_mochila' to={"/jogador/mochila/comida"}>Comida</Link></li>
-          <li className='item_mochila' id='item_arma_mochila'><Link className='link_page_mochila' to={"/jogador/mochila/armas"}>Armas</Link></li>
-          <li className='item_mochila' id='item_outros_produtos_mochila'><Link className='link_page_mochila' to={"/jogador/mochila/outros_produtos"}>Outros produtos</Link></li>
+        <span id='capacidade_mochila'>Capacidade máxima de carga da mochila: 10 unidades</span>
+        
+        <div className='link_page_mochila'>
+            Comidas
+        </div>
+        <ul className='lista_itens_mochila'>
+          {mostrarComidas()}
         </ul>
+        
+        <div className='link_page_mochila'>
+            Bebidas
+        </div>
+        <ul className='lista_itens_mochila'>
+          {mostrarBebidas()}
+        </ul>
+        
+        <div className='link_page_mochila'>
+            Armas
+        </div>
+        <ul className='lista_itens_mochila'>
+          {mostrarArmas()}
+        </ul>
+
+        <div className='link_page_mochila'>
+            Outros produtos
+        </div>
+        <ul className='lista_itens_mochila'>
+          {mostrarOutrosProdutos()}
+        </ul>
+
         <HeaderComponentVoltar href="/"/>
       </div>
     );

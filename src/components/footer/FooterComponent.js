@@ -16,9 +16,9 @@ function FooterComponent() {
 
   return (
     <footer id='footer'>
-        <BotaoGenericoMenu path="/mensagem" id="botao_mensagem" />
-        <BotaoGenericoMenu path="/mochila" id="botao_mochila" />
-        <BotaoGenericoMenu path="/meu_perfil" id="botao_perfil_jogador" />
+        <BotaoGenericoMenu path="/mensagem_recebida" id="botao_mensagem" />
+        <BotaoGenericoMenu path="/jogador/mochila" id="botao_mochila" />
+        <BotaoGenericoMenu path="/jogador/meu_perfil" id="botao_perfil_jogador" />
         <BotaoGenericoMenu path="/apps" id="apps" />
         <div id='menu' onClick={ativarMenuDropdown}>
         </div>
