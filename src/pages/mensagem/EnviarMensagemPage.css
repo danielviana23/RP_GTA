@@ -1,16 +1,46 @@
+#titulo_enviar_mensagem {
+    margin-top: 0px;
+}
 
 #enviar_mensagem_page {
-    
+    color: white;
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+   
+}
+
+#body_pagina_enviar_mensagem {
+    background-color: black;
 }
 
 #titulo_escrever_mensagem {
 
 }
 
-#numero_destinatario {
+#input_numero_destinatario {
 
 }
 
+#numero_destinatario {
+    display: flex;
+    margin: 10px;
+}
+
+#descricao_destinatario_mensagem {
+    padding: 10px;
+    border: 2px solid white;
+}
+
 #text_area_conteudo_mensagem {
+    height: 200px;
+    margin: 10px;
+}
+
+#botao_enviar_mensagem {
+    padding: 10px;
+    margin: 10px;
 
 }

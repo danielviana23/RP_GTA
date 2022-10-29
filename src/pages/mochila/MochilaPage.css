@@ -1,0 +1,22 @@
+#lista_itens_mochila {
+    list-style: none;
+    padding: 0px;
+    margin: 0px auto;
+    width: 90%;
+}
+
+
+    .item_mochila{
+        background-color: black;
+        color: white;
+        margin-top: 10px;
+        padding: 10px;
+        display: flex;
+
+    }
+
+    .link_page_mochila {
+        text-decoration: none;
+        color: white;
+        min-width: 100%;
+    }
