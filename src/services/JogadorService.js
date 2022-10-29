@@ -5,12 +5,12 @@ const ServiceJogador = {
 
     buscar_itens_mochila_jogador: function buscarItensMochilaJogador() {
         return [
-            // {
-            //     id_item: 1,
-            //     nome_produto: "Pizza",
-            //     categoria: "comida",
-            //     quantidade: 10
-            // }, 
+            {
+                id_item: 1,
+                nome_produto: "Pizza",
+                categoria: "comida",
+                quantidade: 10
+            }, 
             {
                 id_item: 2,
                 nome_produto: "Pistola",

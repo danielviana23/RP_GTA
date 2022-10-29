@@ -24,8 +24,10 @@ function MochilaPage() {
     }
 
     function mostrarComidas() {
-       let itens_comida_filtrados = itens_mochila_jogador.map(item => {
+      let containsComida = false;
+      let itens_comida_filtrados = itens_mochila_jogador.map(item => {
         if(item.categoria === filtro_categoria.comida) {
+          containsComida = true;
           return (
             <li className='item_mochila' id='lista_categoria_comida'>
               <div className='nome_produto_mochila' >Pizza ( 10 unidades )</div>
@@ -35,13 +37,14 @@ function MochilaPage() {
               </div>
             </li>
           )
-        }
+        } 
       });
 
-      if(itens_comida_filtrados.length == 0) {
-        alert("foi")
-        return <h1>Nenhum produto encontrado</h1>
+      if(!containsComida) {
+        return <h3 className='notfound'>Nenhuma comida na mochila</h3>
       }
+
+      console.log(itens_comida_filtrados);
 
       return itens_comida_filtrados;
     }
