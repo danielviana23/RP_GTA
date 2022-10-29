@@ -63,13 +63,13 @@ function ListaDeEmpregos() {
    
     return (
         <div>
-            <HeaderComponentVoltar href="/chamada_de_emergencia" />
             <h3>Lista de empregos</h3>
             <div id="div_lista_empregos">
                 <ul id='lista_empregos'>
                     {lista_empregos}
                 </ul>
             </div>
+            <HeaderComponentVoltar href="/" />
         </div>
     );
 }

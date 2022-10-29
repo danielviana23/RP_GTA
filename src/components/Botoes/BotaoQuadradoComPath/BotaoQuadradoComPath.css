@@ -1,0 +1,12 @@
+.botao_quadrado_com_patch {
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    padding: 0px;
+    margin-top: 2px;
+}
+
+.botao_quadrado_com_patch {
+    width: 100%;
+    padding: 0px;
+}

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SectionPrincipal from './components/section/section-principal/SectionPrincipal'
 import FooterComponent from './components/footer/FooterComponent';
 
-function App() {
+function TelaPrincipal() {
     return (
       <div className="App_principal">
         <SectionPrincipal />
@@ -12,4 +12,4 @@ function App() {
     );
 }
 
-export default App;
+export default TelaPrincipal;

@@ -16,11 +16,11 @@ function FooterComponent() {
 
   return (
     <footer id='footer'>
-        <BotaoGenericoMenu path="/chamada_de_emergencia" id="chamada_de_emergencia" name="Contatos"/>
-        <BotaoGenericoMenu path="/meu_perfil" id="perfil_jogador" name="Perfil"/>
-        <BotaoGenericoMenu path="/apps" id="apps" name="Apps"/>
+        <BotaoGenericoMenu path="/mensagem" id="botao_mensagem" />
+        <BotaoGenericoMenu path="/mochila" id="botao_mochila" />
+        <BotaoGenericoMenu path="/meu_perfil" id="botao_perfil_jogador" />
+        <BotaoGenericoMenu path="/apps" id="apps" />
         <div id='menu' onClick={ativarMenuDropdown}>
-            Menu
         </div>
     </footer>
   );

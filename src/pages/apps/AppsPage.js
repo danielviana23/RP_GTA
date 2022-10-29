@@ -1,10 +1,9 @@
 import React from 'react';
 import BotaoApp from '../../components/Botoes/BotaoApps/BotaoApp';
 import './AppsPage.css';
-
 import { Link } from 'react-router-dom';
 
-// icone aplicativos
+// Ícone aplicativos
 import BombeiroIcon from '../../assets/emprego_icon/icone_bombeiro.png';
 import PoliciaIcon from '../../assets/emprego_icon/icone_policia.jpg';
 import UberIcon from '../../assets/emprego_icon/uber.png';
@@ -44,11 +43,12 @@ function AppsPage() {
 
   return (
     <div id='div_aplicativos'>
-      <HeaderComponentVoltar href="/"/>
       <h3>Aplicativos</h3>
         <section id='aplicativos'>
           {lista_aplicativos}
         </section>
+        <div></div>
+        <HeaderComponentVoltar href="/"/>
     </div>
   );
 }
