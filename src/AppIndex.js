@@ -14,6 +14,7 @@ import RegistrarComponent from './RegistrarComponent';
 import MensagemPage from './pages/mensagem/MensagemPage';
 import BancoAppPage from './pages/apps/Aplicativos/banco/BancoAppPage';
 import MochilaPage from './pages/mochila/MochilaPage';
+import FuncaoPixPage from './pages/apps/Aplicativos/banco/pix/funcao_pix/FuncaoPixPage';
 
 import EnviarMensagemPage from './pages/mensagem/EnviarMensagemPage';
 
@@ -22,7 +23,6 @@ function AppIndex() {
     const [showComponent, setShowComponent] = useState();
     const [token, setToken] = useState();
     const [isLogged, setIsLogged] = useState();
-
     
     useEffect(() => {
         setToken(window.localStorage.getItem("token"));
@@ -96,7 +96,9 @@ function AppIndex() {
                         
                         <Route path="/apps" exact={true} element={<AppsPage />} /> 
                         <Route path="/aplicativo/pessoal/transferir_bens" exact={true} element={<div>transf</div>} /> 
+                        
                         <Route path="/aplicativo/pessoal/banco" exact={true} element={<BancoAppPage />} /> 
+                        <Route path="/aplicativo/pessoal/banco/pix" exact={true} element={<FuncaoPixPage />} /> 
 
                         <Route path="/empregos/lista_empregos" exact={true} element={<ListaDeEmpregos />} />
 

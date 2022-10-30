@@ -49,7 +49,6 @@ function AppsPage() {
 
   return (
     <div id='div_aplicativos'>
-      {/* <TelaAppComponent titulo="APPs pessoal" listaApps={aplicativos_pessoais}/> */}
       <div className='div_aplicativos'>
         <h3 className='titulo_tela_aplicativo'>APPs pessoais</h3>
         <section className='aplicativos'>

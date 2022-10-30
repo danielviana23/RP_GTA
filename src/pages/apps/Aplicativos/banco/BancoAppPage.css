@@ -3,27 +3,7 @@
     background-color: black;
 }
 
-    #section_icone_banco {
-        min-height: 100px;
-        background-color: #101010;
-        display: flex;
-        width: 100%;
-    }
 
-        #icone_banco_tela_app {
-            min-width: 100px;
-            min-height: 100px;
-        }
-
-        #titulo_rp_bank {
-            color: #FF8A00;
-            margin-right: 100px;
-            min-width: 50%;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
     #section_saldo_disponivel {
         width: 100%;

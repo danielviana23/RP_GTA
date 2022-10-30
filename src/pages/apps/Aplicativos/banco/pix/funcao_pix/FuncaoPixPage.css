@@ -1,0 +1,43 @@
+.banco_pix_page {
+    background-color: black; 
+    height: 100vh;
+}
+
+    #formulario_pix {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+        #titulo_pix_banco_app {
+            color: #FF8A00;
+            border: 1px solid #FF8A00;
+            padding: 10px;
+            display: flex;  
+        }
+        
+        .campo_id_valor {
+            color: #FF8A00;
+            border: 1px solid #FF8A00;
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+            margin: 10px;
+            min-height: 50px;
+        }
+
+        #botao_enviar_pix {
+            color: #000;
+            border: 1px solid #FF8A00;
+            background-color: #FF8A00;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        #section_botao {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            height: 100px;
+        }

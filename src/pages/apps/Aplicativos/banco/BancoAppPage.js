@@ -2,18 +2,15 @@ import React from 'react';
 import './BancoAppPage.css';
 
 import HeaderComponentVoltar from '../../../../components/footer/headerVoltar/HeaderComponentVoltar';
-
-import IconeBancoRp from '../../../../assets/icone_banco.png';
+import HeaderAppBanco from '../../../../components/app/banco_app/HeaderAppBanco';
 import { Link } from 'react-router-dom';
 
 function BancoAppPage() {
   
   return (
     <div className='banco_page'>
-      <section id='section_icone_banco'>
-        <img width={100} height={100} id='icone_banco_tela_app' src={IconeBancoRp}/>
-        <h1 id='titulo_rp_bank'>RP BANK</h1>
-      </section>
+
+      <HeaderAppBanco />
 
       <section id='section_saldo_disponivel'>
             <span id='texto_saldo_disponivel'>Saldo disponível</span>
@@ -21,7 +18,7 @@ function BancoAppPage() {
       </section>
       
       <section id='carossel_opcoes_bancarias'>
-        <Link id='botao_link_pix' to={""}>Pix</Link>
+        <Link id='botao_link_pix' to={"/aplicativo/pessoal/banco/pix"}>Pix</Link>
       </section>
 
       <HeaderComponentVoltar href="/apps"/>
