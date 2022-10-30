@@ -26,7 +26,6 @@
         }
 
     #section_saldo_disponivel {
-        border: 1px solid red;
         width: 100%;
         min-height: 100px;
         display: flex;
@@ -47,11 +46,11 @@
             position: relative;
             left: 10px;
             min-height: 50px;
-
         }
 
     #carossel_opcoes_bancarias {
-        border: 1px solid #FF8A00;
+        border-top: 1px solid #FF8A00;
+        border-bottom: 1px solid #FF8A00;
         padding: 50px;
     }
 

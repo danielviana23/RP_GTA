@@ -21,7 +21,7 @@ function SectionPrincipal() {
             <div id='menu_dropdown' hidden>
                 <div id='menus_botoes'>
                     <BotaoQuadradoComPath path="/regras" id="opcao_regras" name="Regras"/>
-                    <BotaoQuadradoComPath path="/empregos" id="opcao_emprego" name="Emprego"/>
+                    <BotaoQuadradoComPath path="/empregos/lista_empregos" id="opcao_emprego" name="Emprego"/>
                     {/* <BotaoQuadradoComPath path="/denunciar_jogador" id="opcao_denunciar_jogador" name="Denunciar jogador"/> */}
                     <button onClick={deslogar} id='botao_sair'>Sair da sessão RP</button>
                 </div>

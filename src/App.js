@@ -7,6 +7,7 @@ function TelaPrincipal() {
     return (
       <div className="App_principal">
         <SectionPrincipal />
+        
         <FooterComponent/>
       </div>
     );

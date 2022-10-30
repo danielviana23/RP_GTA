@@ -18,11 +18,6 @@ function AppsPage() {
       nome_aplicativo: "Meu banco",
       caminho_icone_aplicativo: BancoIcon,
       path_tela_aplicativo: "/aplicativo/pessoal/banco"
-    },
-    {
-      nome_aplicativo: "Transferir bens",
-      caminho_icone_aplicativo: BensIcons,
-      path_tela_aplicativo: "/aplicativo/pessoal/transferir_bens"
     }
   ];
 

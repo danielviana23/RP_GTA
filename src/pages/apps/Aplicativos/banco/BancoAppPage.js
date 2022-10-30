@@ -24,7 +24,7 @@ function BancoAppPage() {
         <Link id='botao_link_pix' to={""}>Pix</Link>
       </section>
 
-      <HeaderComponentVoltar href="/"/>
+      <HeaderComponentVoltar href="/apps"/>
     </div>
   );
 }
