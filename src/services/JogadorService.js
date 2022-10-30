@@ -19,7 +19,7 @@ const ServiceJogador = {
             }, 
             {
                 id_item: 3,
-                nome_produto: "Pistola",
+                nome_produto: "agua",
                 categoria: "bebida",
                 quantidade: 1
             }, 

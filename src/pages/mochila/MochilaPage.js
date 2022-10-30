@@ -50,85 +50,120 @@ function MochilaPage() {
     }
 
     function mostrarBebidas() {
-      let itens_bebidas_filtrados = itens_mochila_jogador.map(item => {
-        return (
-          <li className='item_mochila' id='lista_categoria_comida'>
-            <div className='nome_produto_mochila' >Pizza ( 10 unidades )</div>
-            <div className='botoes_usar_transferir'>
-              <div className='botao_usar_mochilapage'>Usar</div>
-              <div className='botao_transferir_mochilapage'>Transferir</div>
-            </div>
-          </li>
-        )
+      let containsComida = false;
+      let itens_comida_filtrados = itens_mochila_jogador.map(item => {
+        if(item.categoria === filtro_categoria.bebida) {
+          containsComida = true;
+          return (
+            <li className='item_mochila' id='lista_categoria_comida'>
+              <div className='nome_produto_mochila' >{item.nome_produto} ( {item.quantidade} unidades )</div>
+              <div className='botoes_usar_transferir'>
+                <div className='botao_usar_mochilapage'>Usar</div>
+                <div className='botao_transferir_mochilapage'>Transferir</div>
+              </div>
+            </li>
+          )
+        } 
       });
-      return itens_bebidas_filtrados;
+
+      if(!containsComida) {
+        return <h3 className='notfound'>Nenhuma bebida na mochila</h3>
+      }
+
+      console.log(itens_comida_filtrados);
+
+      return itens_comida_filtrados;
     }
 
     function mostrarArmas() {
-      return itens_mochila_jogador.map(item => {
-        return (
-          <li className='item_mochila' id='lista_categoria_comida'>
-            <div className='nome_produto_mochila' >Pizza ( 10 unidades )</div>
-            <div className='botoes_usar_transferir'>
-              <div className='botao_usar_mochilapage'>Usar</div>
-              <div className='botao_transferir_mochilapage'>Transferir</div>
-            </div>
-          </li>
-        )
+      let containsComida = false;
+      let itens_comida_filtrados = itens_mochila_jogador.map(item => {
+        if(item.categoria === filtro_categoria.arma) {
+          containsComida = true;
+          return (
+            <li className='item_mochila' id='lista_categoria_comida'>
+              <div className='nome_produto_mochila' >{item.nome_produto} ( {item.quantidade} unidades )</div>
+              <div className='botoes_usar_transferir'>
+                <div className='botao_usar_mochilapage'>Usar</div>
+                <div className='botao_transferir_mochilapage'>Transferir</div>
+              </div>
+            </li>
+          )
+        } 
       });
+
+      if(!containsComida) {
+        return <h3 className='notfound'>Nenhuma arma na mochila</h3>
+      }
+
+      console.log(itens_comida_filtrados);
+
+      return itens_comida_filtrados;
     }
 
     function mostrarOutrosProdutos() {
-      return itens_mochila_jogador.map(item => {
-        return (
-          <li className='item_mochila' id='lista_categoria_comida'>
-            <div className='nome_produto_mochila' >Pizza ( 10 unidades )</div>
-            <div className='botoes_usar_transferir'>
-              <div className='botao_usar_mochilapage'>Usar</div>
-              <div className='botao_transferir_mochilapage'>Transferir</div>
-            </div>
-          </li>
-        )
+      let containsComida = false;
+      let itens_comida_filtrados = itens_mochila_jogador.map(item => {
+        if(item.categoria === filtro_categoria.outros_produtos) {
+          containsComida = true;
+          return (
+            <li className='item_mochila' id='lista_categoria_comida'>
+              <div className='nome_produto_mochila' >{item.nome_produto} ( {item.quantidade} unidades )</div>
+              <div className='botoes_usar_transferir'>
+                <div className='botao_usar_mochilapage'>Usar</div>
+                <div className='botao_transferir_mochilapage'>Transferir</div>
+              </div>
+            </li>
+          )
+        } 
       });
+
+      if(!containsComida) {
+        return <h3 className='notfound'>Nenhum produto na mochila</h3>
+      }
+
+      console.log(itens_comida_filtrados);
+
+      return itens_comida_filtrados;
     }
 
     return (
-      <div className="mochila_page">
-        <div>
-          <h1>Sua mochila</h1>
-        </div>
-        <span id='capacidade_mochila'>Capacidade máxima de carga da mochila: 10 unidades</span>
-        
-        <div className='link_page_mochila'>
-            Comidas
-        </div>
-        <ul className='lista_itens_mochila'>
-          {mostrarComidas()}
-        </ul>
-        
-        <div className='link_page_mochila'>
-            Bebidas
-        </div>
-        <ul className='lista_itens_mochila'>
-          {mostrarBebidas()}
-        </ul>
-        
-        <div className='link_page_mochila'>
-            Armas
-        </div>
-        <ul className='lista_itens_mochila'>
-          {mostrarArmas()}
-        </ul>
+        <div className="mochila_page">
+          <div>
+            <h1>Sua mochila</h1>
+          </div>
+          <span id='capacidade_mochila'>Capacidade máxima de carga da mochila: 10 unidades</span>
+          
+          <div className='link_page_mochila'>
+              Comidas
+          </div>
+          <ul className='lista_itens_mochila'>
+            {mostrarComidas()}
+          </ul>
+          
+          <div className='link_page_mochila'>
+              Bebidas
+          </div>
+          <ul className='lista_itens_mochila'>
+            {mostrarBebidas()}
+          </ul>
+          
+          <div className='link_page_mochila'>
+              Armas
+          </div>
+          <ul className='lista_itens_mochila'>
+            {mostrarArmas()}
+          </ul>
 
-        <div className='link_page_mochila'>
-            Outros produtos
+          <div className='link_page_mochila'>
+              Outros produtos
+          </div>
+          <ul className='lista_itens_mochila'>
+            {mostrarOutrosProdutos()}
+          </ul>
+          <HeaderComponentVoltar href="/"/>
         </div>
-        <ul className='lista_itens_mochila'>
-          {mostrarOutrosProdutos()}
-        </ul>
 
-        <HeaderComponentVoltar href="/"/>
-      </div>
     );
 }
 

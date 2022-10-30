@@ -7,8 +7,8 @@ function BotaoApp(props) {
     <div className='botao_app'>
       <div className='icone_aplicativo'>
         <img className='img_aplicativo' src={props.caminho_icone_aplicativo}/>
+        <span className='icone_nome_aplicativo'>{props.nome_aplicativo}</span>
       </div>
-      <span> App {props.nome_aplicativo}</span>
     </div>
   );
 }

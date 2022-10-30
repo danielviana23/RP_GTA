@@ -12,7 +12,7 @@ import PolicialApp from './pages/apps/Aplicativos/policial/PolicialApp'
 import ConsultarCpfPage from './pages/apps/Aplicativos/policial/consultar_cpf_page/ConsultarCpfPage';
 import RegistrarComponent from './RegistrarComponent';
 import MensagemPage from './pages/mensagem/MensagemPage';
-
+import BancoAppPage from './pages/apps/Aplicativos/banco/BancoAppPage';
 import MochilaPage from './pages/mochila/MochilaPage';
 
 import EnviarMensagemPage from './pages/mensagem/EnviarMensagemPage';
@@ -93,13 +93,17 @@ function AppIndex() {
 
                         <Route path='/mensagem_recebida' exact={true} element={<MensagemPage />} /> 
                         <Route path="/mensagem/enviar_mensagem" exact={true} element={<EnviarMensagemPage />} /> 
-
-                        <Route path="/apps" exact={true} element={<AppsPage />} /> 
                         
+                        <Route path="/apps" exact={true} element={<AppsPage />} /> 
+                        <Route path="/aplicativo/pessoal/transferir_bens" exact={true} element={<div>transf</div>} /> 
+                        <Route path="/aplicativo/pessoal/banco" exact={true} element={<BancoAppPage />} /> 
+
                         <Route path="/empregos/lista_empregos" exact={true} element={<ListaDeEmpregos />} />
 
                         <Route path="/aplicativo/policial" exact={true} element={<PolicialApp />} />
                         <Route path="/aplicativo/policial/consultar_cpf" exact={true} element={<ConsultarCpfPage />} />  
+                        
+                        
                         {/* <Route path="/aplicativo/policial/consultar_placa"  exact={true} element={<ConsultarPlacaPage/>} />
                         <Route path="/aplicativo/policial/revistar_jogador" exact={true} element={<RevistarJogadorPage />} />
                         <Route path="/aplicativo/policial/revistar_veiculo" exact={true} element={<RevistarVeiculoPage />} />

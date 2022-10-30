@@ -1,0 +1,64 @@
+.banco_page {
+    height: 100vh;
+    background-color: black;
+}
+
+    #section_icone_banco {
+        min-height: 100px;
+        background-color: #101010;
+        display: flex;
+        width: 100%;
+    }
+
+        #icone_banco_tela_app {
+            min-width: 100px;
+            min-height: 100px;
+        }
+
+        #titulo_rp_bank {
+            color: #FF8A00;
+            margin-right: 100px;
+            min-width: 50%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    #section_saldo_disponivel {
+        border: 1px solid red;
+        width: 100%;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+
+        #texto_saldo_disponivel {
+            color: #FF8A00;
+            min-height: 70px;
+            position: relative;
+            left: 10px;
+            top: 20px;
+            font-weight: bold;
+        }
+
+        #valor_saldo_disponivel {
+            color: #FF8A00;
+            position: relative;
+            left: 10px;
+            min-height: 50px;
+
+        }
+
+    #carossel_opcoes_bancarias {
+        border: 1px solid #FF8A00;
+        padding: 50px;
+    }
+
+        #botao_link_pix {
+            background-color: #FF8A00;
+            padding: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+        }

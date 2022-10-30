@@ -7,11 +7,13 @@
     height: 70px;
 
     padding: 0px;
-    margin: 0px;
+    margin: 0px ;
 
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    z-index: 1;
+    
     
 }
     #botao_voltar_tela_anterior {
