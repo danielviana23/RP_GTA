@@ -27,7 +27,7 @@ function AppIndex() {
     useEffect(() => {
         setToken(window.localStorage.getItem("token"));
         if(token == null || token == undefined || token == "undefined" || token == "null") {
-            setIsLogged(true)
+            setIsLogged(false)
         } else {
             setIsLogged(true)
         }
