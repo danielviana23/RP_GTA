@@ -11,19 +11,23 @@ function RegistrarComponent(props) {
     }
 
       // TODO ADICIONAR VALIDADOR
-    function registrarJogador() {
+    function cadastrarJogador() {
 
+        let gamertag = document.getElementById("gamertag").value
+        let senha = document.getElementById("senha").value
+        let email = document.getElementById("email").value
+        let numero = document.getElementById("contato").value
 
         let bodyRequest = {
-            "gamertag": document.getElementById("gamertag").value,
-            "nome_personagem": document.getElementById("nome_personagem").value,
-            "email": document.getElementById("email").value,
-            "senha": document.getElementById("senha").value
+            gamertag: gamertag,
+            senha: senha,
+            email: email,
+            contato: numero
         };
-        console.log(validaBodyRequest(bodyRequest.gamertag))
+
 
         if(validaBodyRequest(bodyRequest.gamertag) ||
-            validaBodyRequest(bodyRequest.nome_personagem) ||
+            validaBodyRequest(bodyRequest.senha) ||
             validaBodyRequest(bodyRequest.email) ||
             validaBodyRequest(bodyRequest.senha)
         ) {
@@ -32,12 +36,7 @@ function RegistrarComponent(props) {
             return;
         }
 
-        UsuarioService.cadastrarUsuario();
-
-
-        
-
-        
+        UsuarioService.cadastrarUsuario(bodyRequest);
     }
 
     function voltarTelaLogin() {
@@ -50,11 +49,11 @@ function RegistrarComponent(props) {
             <div id='div_inputs_registrar'>
                 <input className='input_cadastro' id='gamertag' placeholder='Gamertag'/>
                 <input className='input_cadastro' id='email' type="email" placeholder='E-mail'/>
-                <input className='input_cadastro' id='senha' type="password" placeholder='Senha'/>
-                <input className='input_cadastro' id='numero' type="numero" placeholder='Número'/>
+                <input className='input_cadastro' id='senha' type="text" placeholder='Senha'/>
+                <input className='input_cadastro' id='contato' type="numero" placeholder='Número'/>
                 
                 <div id='div_botoes_cadastro'>
-                    <button id='botao_cadastrar' onClick={registrarJogador}>Cadastrar-se</button>
+                    <button id='botao_cadastrar' onClick={cadastrarJogador}>Cadastrar-se</button>
                     <button id='botao_voltar' onClick={voltarTelaLogin}>Voltar</button>
                 </div>
             </div> 

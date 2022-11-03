@@ -1,19 +1,21 @@
 const UsuarioService = {
     cadastrarUsuario: function cadastrarUsuario(bodyRequest) {
-        let urlApiJogador = "http://localhost:8081/usuario/cadastro";
-
+        let urlApiCadastro = "http://45.233.176.162:8081/usuario/cadastro";
         const options = {
             method: 'POST',
-            mode: 'cors',
+            mode: "cors",
             headers: {
                 'Content-Type': "application/json",
                 "Content-length": bodyRequest.length,
+                "Access-Control-Request-Method": "POST",
+                "Accept": "*/*",
+                "Connection": "keep-alive",
             }, 
             body: JSON.stringify(bodyRequest)
         }
 
 
-        fetch(urlApiJogador, options)
+        fetch(urlApiCadastro, options)
         .then((resposta) => {
             if(resposta.status == 201) {
                 alert("Jogador cadastrado com sucesso!")
