@@ -5,11 +5,7 @@ const UsuarioService = {
             method: 'POST',
             mode: "cors",
             headers: {
-                'Content-Type': "application/json",
-                "Content-length": bodyRequest.length,
-                "Access-Control-Request-Method": "POST",
-                "Accept": "*/*",
-                "Connection": "keep-alive",
+                "Authorization": "token123",
             }, 
             body: JSON.stringify(bodyRequest)
         }

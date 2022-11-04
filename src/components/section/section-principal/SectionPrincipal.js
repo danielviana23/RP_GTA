@@ -8,9 +8,10 @@ import './SectionPrincipal.css';
 function SectionPrincipal() {
 
     function deslogar() {
-        window.localStorage.setItem("token", null);
+        window.localStorage.removeItem("id_jogador_rp_mobile");
+        window.localStorage.removeItem("token_rp_mobile");
         window.location.href = "/";
-        // deslogar jogador da sessão
+        window.location.reload();
     }
 
     return (

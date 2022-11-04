@@ -36,6 +36,7 @@ function RegistrarComponent(props) {
             return;
         }
 
+        
         UsuarioService.cadastrarUsuario(bodyRequest);
     }
 
