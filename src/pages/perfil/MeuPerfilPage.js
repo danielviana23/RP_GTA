@@ -6,33 +6,35 @@ import CirculoNecessidade from '../../components/circulos/CirculoNecessidade';
 import './MeuPerfilPage.css';
 import HeaderComponentVoltar from '../../components/footer/headerVoltar/HeaderComponentVoltar';
 
+import ServiceJogador from "../../services/JogadorService";
+
 function MeuPerfilPage() {
 
   const [cpf, setCpf] = useState(null);
   const [dinheiro, setDinheiro] = useState(null);
   const [vida, setVida] = useState(null);
+  const [gamertag, setGamertag] = useState(null);
   const [emprego, setEmprego] = useState(null);
   const [cargo, setCargo] = useState(null);
-  const [cnh, setCnh] = useState(null);
-  const [fome, setFome] = useState(null);
-  const [sede, setSede] = useState(null);
-  const [sono, setSono] = useState(null);
+  const [cnh, setCnh]     = useState(null);
+  const [fome, setFome]   = useState(null);
+  const [sede, setSede]   = useState(null);
+  const [sono, setSono]   = useState(null);
   const [count, setCount] = useState(1);
-
 
   useEffect(() => {
     setTimeout(() => {
+      buscarInformacaoPerfilJogador()
       mudarCorNecessidades(fome, '1')
       mudarCorNecessidades(sede, '2')
       mudarCorNecessidades(sono, '3')
       mudarCorNecessidades(vida, 'vida')
-      buscarInformacaoPerfilJogador()
       if(count == 1 ) {
         setCount(count - 1)
       } else {
         setCount(count + 1)
       }
-    }, 500)
+    }, 1000)
 
   }, [count]);
 
@@ -48,38 +50,34 @@ function MeuPerfilPage() {
     }
   }
 
-  let cpfJogador = window.localStorage.getItem("token");
-
-  let apijogador = "http://localhost:8080/jogador/buscar_jogador/" + cpfJogador;
-  var headerRequest = new Headers();
-      headerRequest.set("Access-Control-Request-Method", "POST");
-      headerRequest.set("Access-Control-Request-Headers", "Content-Type");
-
-      
   function buscarInformacaoPerfilJogador() {
-    fetch(apijogador, {headers: headerRequest, mode: 'cors'})
-    .then((resposta) => {
-      return resposta.json()
-    }).then(jsonBody => {
+    let idJogador = window.localStorage.getItem("id_jogador_rp_mobile");
+    let token = window.localStorage.getItem("token_rp_mobile");
 
-      setDinheiro(jsonBody.dinheiro);
-      setVida(jsonBody.vida);
-      setCpf(jsonBody.idJogador)
-  
-      if(jsonBody.emprego != null) {
-        setEmprego(jsonBody.emprego.nomeEmprego)
-        setCargo(jsonBody.emprego.cargo)
-      } else {
-        setEmprego("Desempregado")
+    let respostaApiJogador = ServiceJogador.buscar_jogador(idJogador, token);    
+    
+    respostaApiJogador.then((resp) => {
+      console.log("resposta");
+      console.log(resp);
+      return resp.json();
+    }).then(resJson => {
+      console.log(resJson)
+      setDinheiro(resJson.dinheiro);
+      setCpf(resJson.id_jogador);
+      setGamertag(resJson.gamertag);
+      setSede(resJson.necessidades.sede);
+      setFome(resJson.necessidades.fome);
+      setVida(resJson.necessidades.vida);
+      setSono(resJson.necessidades.sono);
+
+      if(resJson.id_emprego) {
+        setEmprego(resJson.empregoModel.nome_emprego);
+        setCargo(resJson.empregoModel.cargos[0].nome_cargo);
       }
-  
-      setCnh(jsonBody.cnh);
-      setSede(jsonBody.sede);
-      setFome(jsonBody.fome)
-      setSono(jsonBody.sono)
+      setCnh("Você não possui CNH")
     });
-
   }
+
 
   return (
     <div>
@@ -91,10 +89,10 @@ function MeuPerfilPage() {
             <CirculoNecessidade id="3" nome_necessidade="Sono" percentual={sono + "%"}/>
         </div>
         <div id="status_player_identificacao">
-          <ImagemPerfilComponent />
+          <ImagemPerfilComponent nome_titulo={gamertag}/>
           <section id="identificação">
             <div id="texto_identificacao">IDENTIFICAÇÃO</div>
-            <PropriedadesJogadorComponent nome_propriedade="CPF" valor_propriedade={cpf}/>
+            <PropriedadesJogadorComponent nome_propriedade="ID" valor_propriedade={cpf}/>
           </section>
           <section id="status">
             <div id="texto_status_jogador">STATUS DO JOGADOR</div>
@@ -102,7 +100,7 @@ function MeuPerfilPage() {
             <PropriedadesJogadorComponent id="vida" nome_propriedade="Vida" valor_propriedade={vida + "%"}/>
             <PropriedadesJogadorComponent nome_propriedade="Emprego" valor_propriedade={emprego}/>
             <PropriedadesJogadorComponent nome_propriedade="Cargo" valor_propriedade={cargo}/>
-            <PropriedadesJogadorComponent nome_propriedade="CNH" valor_propriedade={cnh}/>
+            {/* <PropriedadesJogadorComponent nome_propriedade="CNH" valor_propriedade={cnh}/> */}
           </section>
         </div>
     </div>

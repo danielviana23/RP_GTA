@@ -1,5 +1,4 @@
 import React from 'react';
-import BotaoGenericoMenu from '../../Botoes/BotaoGenericoMenu/BotaoGenericoMenu';
 import BotaoQuadradoComPath from '../../Botoes/BotaoQuadradoComPath/BotaoQuadradoComPath';
 import Wifi from '../../../assets/wifi.jpg';
 import './SectionPrincipal.css';

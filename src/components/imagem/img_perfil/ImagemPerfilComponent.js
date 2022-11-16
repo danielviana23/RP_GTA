@@ -11,7 +11,7 @@ function ImagemPerfilComponent(props) {
                 <img width={100} height={100} id="imagem_perfil" src={FotoPerfil}/>
             </div>
             <div>
-                <span>Daniel do PN</span>
+                <span>{props.nome_titulo}</span>
             </div>
         </div>
     </div>

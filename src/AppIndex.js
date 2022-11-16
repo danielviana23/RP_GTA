@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Banner from './assets/banner_login.png'
 import './Login.css';
@@ -16,12 +16,11 @@ import BancoAppPage from './pages/apps/Aplicativos/banco/BancoAppPage';
 import MochilaPage from './pages/mochila/MochilaPage';
 import FuncaoPixPage from './pages/apps/Aplicativos/banco/pix/funcao_pix/FuncaoPixPage';
 
-import LoadingIconGif from './assets/carregamento.gif';
+import UberMainPage from './pages/apps/Aplicativos/uber/UberMainPage';
 
+import LoadingIconGif from './assets/carregamento.gif';
 import EnviarMensagemPage from './pages/mensagem/EnviarMensagemPage';
 import AutenticacaoService from './services/AutenticacaoService';
-import UsuarioService from './services/UsuarioService';
-
 
 function AppIndex() {
     
@@ -31,7 +30,6 @@ function AppIndex() {
     
     useEffect(() => {
         setToken(window.localStorage.getItem("token_rp_mobile"));
-        
         if(token == null || token == undefined || token == "undefined" || token == "null") {
             setIsLogged(false);
         } else {
@@ -52,19 +50,17 @@ function AppIndex() {
         let gamertag = document.getElementById("input_login_gamertag").value;        
         let senha = document.getElementById("input_login_senha").value;
         
-        
-
-        
-
-        
         let bodyRequest = {
             gamertag: gamertag,
             senha: senha,
         };
 
-        AutenticacaoService.autenticarUsuario(bodyRequest);
-
-        
+        let responseAuth = AutenticacaoService.autenticarUsuario(bodyRequest)
+        responseAuth.then((resp) => resp.json()).then((resp) => {
+            window.localStorage.setItem("token_rp_mobile", resp.token);
+            window.localStorage.setItem("id_jogador_rp_mobile", resp.id_jogador)
+            setToken(resp.token);
+        })
     }
 
     if(isLogged) {
@@ -90,9 +86,9 @@ function AppIndex() {
 
                         <Route path="/empregos/lista_empregos" exact={true} element={<ListaDeEmpregos />} />
 
+                        {/*APP POLICIAL  */}
                         <Route path="/aplicativo/policial" exact={true} element={<PolicialApp />} />
                         <Route path="/aplicativo/policial/consultar_cpf" exact={true} element={<ConsultarCpfPage />} />  
-                        
                         {
                             /* 
                                 <Route path="/aplicativo/policial/consultar_placa"  exact={true} element={<ConsultarPlacaPage/>} />
@@ -101,6 +97,11 @@ function AppIndex() {
                                 <Route path="/aplicativo/policial/prender_jogador"  exact={true} element={<PrenderJogadorPage />} />   
                             */
                         }
+
+                        {/*APP UBER*/}
+                        <Route path="/aplicativo/uber" exact={true} element={<UberMainPage />} />  
+                        
+                        
     
                     </Routes>
                 </BrowserRouter>

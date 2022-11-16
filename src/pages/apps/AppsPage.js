@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import BombeiroIcon from '../../assets/emprego_icon/icone_bombeiro.png';
 import PoliciaIcon from '../../assets/emprego_icon/icone_policia.jpg';
 import BancoIcon from '../../assets/icone_banco.png';
+import UberIcon from '../../assets/emprego_icon/uber.png';
 import BensIcons from '../../assets/icone_posse.jpg';
 
 import HeaderComponentVoltar from '../../components/footer/headerVoltar/HeaderComponentVoltar';
@@ -23,14 +24,9 @@ function AppsPage() {
 
   let aplicativos_emprego = [
     {
-      nome_aplicativo: "Policial",
-      caminho_icone_aplicativo: PoliciaIcon,
-      path_tela_aplicativo: "/aplicativo/policial"
-    },
-    {
-      nome_aplicativo: "Bombeiro",
-      caminho_icone_aplicativo: BombeiroIcon,
-      path_tela_aplicativo: "/aplicativo/bombeiro"
+      nome_aplicativo: "Uber",
+      caminho_icone_aplicativo: UberIcon,
+      path_tela_aplicativo: "/aplicativo/uber"
     }
   ];
 

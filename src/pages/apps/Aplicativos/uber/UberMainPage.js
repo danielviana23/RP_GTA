@@ -5,7 +5,7 @@ import ErroApp from '../../../erroApp/ErroApp';
 
 import ServiceJogador from "../../../../services/JogadorService";
 
-function PolicialApp() {
+function UberMainPage() {
 
   const [jogador, setJogador] = useState({});
 
@@ -20,22 +20,18 @@ function PolicialApp() {
   }, [])
   
 
-  if(jogador.id_emprego != 1) {
+  if(jogador.id_emprego != 2) {
     return (<ErroApp />)
   } else {
-    if(jogador.id_emprego == 1) {
+    if(jogador.id_emprego == 2) {
       return (
-        <div id="aplicativo_policial">
+        <div id="aplicativo_uber">
+          <BotaoFuncaoEmprego href_funcao="/aplicativo/policial/consultar_cpf" name="Pedidos de cliente" />
           <HeaderComponentVoltar href="/"/>
-          <BotaoFuncaoEmprego href_funcao="/aplicativo/policial/consultar_cpf" name="Consultar CPF" />
-          {/* <BotaoFuncaoEmprego href_funcao="/aplicativo/policial/consultar_placa"  name="Consultar placa" />
-          <BotaoFuncaoEmprego href_funcao="/aplicativo/policial/revistar_jogador" name="Revistar jogador" />
-          <BotaoFuncaoEmprego href_funcao="/aplicativo/policial/revistar_veiculo" name="Revistar veiculo" />
-          <BotaoFuncaoEmprego href_funcao="/aplicativo/policial/prender_jogador"  name="Prender jogador" /> */}
         </div>
       );
     }
   }
 }
 
-export default PolicialApp;
+export default UberMainPage;

@@ -3,6 +3,7 @@ import './Login.css';
 import './RegistrarComponent.css';
 
 import UsuarioService from './services/UsuarioService';
+import GifCarregamento from './assets/carregamento.gif';
 
 function RegistrarComponent(props) {
 
@@ -10,13 +11,16 @@ function RegistrarComponent(props) {
         
     }
 
-      // TODO ADICIONAR VALIDADOR
+    // TODO ADICIONAR VALIDADOR
     function cadastrarJogador() {
 
+        document.getElementById("botao_cadastrar").disabled = true;
+        document.getElementById("imagem_carregamento").style.display = "block";
+        
         let gamertag = document.getElementById("gamertag").value
-        let senha = document.getElementById("senha").value
-        let email = document.getElementById("email").value
-        let numero = document.getElementById("contato").value
+        let senha    = document.getElementById("senha").value
+        let email    = document.getElementById("email").value
+        let numero   = document.getElementById("contato").value
 
         let bodyRequest = {
             gamertag: gamertag,
@@ -32,11 +36,9 @@ function RegistrarComponent(props) {
             validaBodyRequest(bodyRequest.senha)
         ) {
             alert("Todos os campos precisam estar com valor preenchido!")
-            console.log("validado")
             return;
         }
 
-        
         UsuarioService.cadastrarUsuario(bodyRequest);
     }
 
@@ -48,9 +50,10 @@ function RegistrarComponent(props) {
     return (
         <div id='registrar-se'>
             <div id='div_inputs_registrar'>
+                <img src={GifCarregamento} id="imagem_carregamento"/>
                 <input className='input_cadastro' id='gamertag' placeholder='Gamertag'/>
                 <input className='input_cadastro' id='email' type="email" placeholder='E-mail'/>
-                <input className='input_cadastro' id='senha' type="text" placeholder='Senha'/>
+                <input className='input_cadastro' id='senha' type="password" placeholder='Senha'/>
                 <input className='input_cadastro' id='contato' type="numero" placeholder='Número'/>
                 
                 <div id='div_botoes_cadastro'>

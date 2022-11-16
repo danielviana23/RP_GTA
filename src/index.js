@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom/client';
 import AppIndex from './AppIndex';
 import './index.css';
 
+import GIFCarregamento from './assets/carregamento.gif';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <AppIndex/>
+  <div>
+    <div id="div_tela_carregamento" >
+      <img src={GIFCarregamento} />
+    </div>
+    <AppIndex/>
+  </div>
 );  
 
 

@@ -1,8 +1,8 @@
 .div_botao_aplicativo_emprego {
   width: 20%;
   height: 20%;
-  background-color: green;
-  cursor: pointer
+  cursor: pointer;
+  border: 1px solid black;
 }
 
   .div_botao_aplicativo_emprego {
